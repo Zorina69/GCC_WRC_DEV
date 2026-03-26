@@ -9,14 +9,15 @@ function App() {
       <Routes>
         {/* Home / List Page */}
         <Route path="/" element={<WrcList />} />
-        
+
+        {/* ✅ Must be BEFORE /wrc/:tempId */}
+        <Route path="/wrc/all-urls" element={<AllTempUrls />} />
+
         {/* Detail Page with Temporary ID in URL */}
         <Route path="/wrc/:tempId" element={<WrcProfile />} />
 
-        {/* Optional: Redirect any unknown path to home */}
+        {/* Wildcard - always last */}
         <Route path="*" element={<Navigate to="/" replace />} />
-
-        <Route path="/wrc/all-urls" element={<AllTempUrls />} />
       </Routes>
     </Router>
   );
