@@ -1,7 +1,7 @@
 {
   "rewrites": [
-    { "source": "/wrc/all-urls", "destination": "/wrcAllurl.jsx" },
-    { "source": "/wrc/:tempId", "destination": "/wrcProfile.jsx" },
-    { "source": "/(.*)", "destination": "/wrcList.jsx" }
+    { "source": "/wrc/all-urls", "destination": "/index.html" },
+    { "source": "/wrc/:tempId", "destination": "/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
