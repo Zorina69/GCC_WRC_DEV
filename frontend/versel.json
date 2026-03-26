@@ -1,9 +1,7 @@
 {
-  "routes": [
-    {
-      "src": "/[^.]+",
-      "dest": "/",
-      "status": 200
-    }
+  "rewrites": [
+    { "source": "/wrc/all-urls", "destination": "/wrcAllurl.jsx" },
+    { "source": "/wrc/:tempId", "destination": "/wrcProfile.jsx" },
+    { "source": "/(.*)", "destination": "/wrcList.jsx" }
   ]
 }
