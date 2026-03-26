@@ -16,7 +16,7 @@ function App() {
         {/* Optional: Redirect any unknown path to home */}
         <Route path="*" element={<Navigate to="/" replace />} />
 
-        <Route path="/all-urls" element={<AllTempUrls />} />
+        <Route path="/wrc/all-urls" element={<AllTempUrls />} />
       </Routes>
     </Router>
   );
