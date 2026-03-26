@@ -1,0 +1,651 @@
+{
+	"WRC_2026":{
+  "participants": [
+    {
+      "order": 1,
+      "id": "WRC2026-001",
+      "name_khmer": "ស្រៀង គឹមស្រ៊ន",
+      "name_latin": "Srieng Kimsron",
+      "organization": "ក្លឹបធរណីវិទ្យាកម្ពុជា",
+      "role": "ប្រធានក្លឹបធរណីវិទ្យាកម្ពុជា",
+      "phone": "0962770277",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": null,
+        "relation": null,
+        "phone": null
+      }
+    },
+    {
+      "order": 2,
+      "id": "WRC2026-002",
+      "name_khmer": "ប៊ុន ពិសី",
+      "name_latin": "Bun Pisey",
+      "organization": "ក្លឹបធរណីវិទ្យាកម្ពុជា",
+      "role": "ប្រធានកម្មវិធី",
+      "phone": "016253778",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": null,
+        "relation": null,
+        "phone": null
+      }
+    },
+    {
+      "order": 3,
+      "id": "WRC2026-003",
+      "name_khmer": "ជីម សុខា",
+      "name_latin": "Chim Sokha",
+      "organization": "ក្លឹបធរណីវិទ្យាកម្ពុជា",
+      "role": "អនុប្រធានកម្មវិធី",
+      "phone": "069787584",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": null,
+        "relation": null,
+        "phone": null
+      }
+    },
+    {
+      "order": 4,
+      "id": "WRC2026-004",
+      "name_khmer": "វុឌ្ឍី ចន្ទពិសិដ្ឋ",
+      "name_latin": "Vuthy Chanpiseth",
+      "organization": "ក្លឹបធរណីវិទ្យាកម្ពុជា",
+      "role": "អនុប្រធានកម្មវិធី",
+      "phone": "087497303",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "ស៊ា តារា",
+        "relation": "ពូ",
+        "phone": "0962776307"
+      }
+    },
+    {
+      "order": 5,
+      "id": "WRC2026-005",
+      "name_khmer": "ភឺន សុខណា",
+      "name_latin": "Phoeun Sokna",
+      "organization": "ក្លឹបធរណីវិទ្យាកម្ពុជា",
+      "role": "គណៈកម្មការ",
+      "phone": "093477387",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": null,
+        "relation": null,
+        "phone": null
+      }
+    },
+    {
+      "order": 6,
+      "id": "WRC2026-006",
+      "name_khmer": "ម៉ិច ស៊ីណា",
+      "name_latin": "Mech Sina",
+      "organization": "ក្លឹបធរណីវិទ្យាកម្ពុជា",
+      "role": "គណៈកម្មការ",
+      "phone": "0962411611",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": null,
+        "relation": null,
+        "phone": null
+      }
+    },
+    {
+      "order": 7,
+      "id": "WRC2026-007",
+      "name_khmer": "ម៉ិច ស៊ីនឿន",
+      "name_latin": "Mich Sinoeurn",
+      "organization": "ក្លឹបធរណីវិទ្យាកម្ពុជា",
+      "role": "គណៈកម្មការ",
+      "phone": "0966478578",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": null,
+        "relation": null,
+        "phone": null
+      }
+    },
+    {
+      "order": 8,
+      "id": "WRC2026-008",
+      "name_khmer": "យុទ្ធ សុវណ្ណារី",
+      "name_latin": "Yuth Sovannary",
+      "organization": "ក្លឹបធរណីវិទ្យាកម្ពុជា",
+      "role": "ក្រុមការងារ",
+      "phone": "0889838082",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": null,
+        "relation": null,
+        "phone": null
+      }
+    },
+    {
+      "order": 9,
+      "id": "WRC2026-009",
+      "name_khmer": "ថៃ សុខមាន",
+      "name_latin": "Thai Sokmean",
+      "organization": "ក្លឹបធរណីវិទ្យាកម្ពុជា",
+      "role": "ក្រុមការងារ",
+      "phone": "087543008",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "ថៃ ថុងសាន",
+        "relation": "ឱពុក",
+        "phone": "0977303084"
+      }
+    },
+    {
+      "order": 10,
+      "id": "WRC2026-010",
+      "name_khmer": "ពុំ ចាន់ជាលីន",
+      "name_latin": "Pom Chanchealin",
+      "organization": "ក្លឹបធរណីវិទ្យាកម្ពុជា",
+      "role": "ក្រុមការងារ",
+      "phone": "0963103699",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "ណូ សុធារី",
+        "relation": "ម្ដាយ",
+        "phone": "0964245823"
+      }
+    },
+    {
+      "order": 11,
+      "id": "WRC2026-011",
+      "name_khmer": "ជុន គឹមចិន",
+      "name_latin": "Chon Kimchen",
+      "organization": "ក្លឹបធរណីវិទ្យាកម្ពុជា",
+      "role": "ក្រុមការងារ",
+      "phone": "0885967410",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "ជុន គឹមអេង",
+        "relation": "បង",
+        "phone": "087523311"
+      }
+    },
+    {
+      "order": 12,
+      "id": "WRC2026-012",
+      "name_khmer": "ហែម សុវណ្ណបញ្ញា",
+      "name_latin": "Hem Sovannpanha",
+      "organization": "ក្លឹបធរណីវិទ្យាកម្ពុជា",
+      "role": "ក្រុមការងារ",
+      "phone": "095778166",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "ហែម វិលក្ខណ៍",
+        "relation": "ឱពុក",
+        "phone": "016797479"
+      }
+    },
+    {
+      "order": 13,
+      "id": "WRC2026-013",
+      "name_khmer": "សយ ច័ន្ទរតនា",
+      "name_latin": "Soy Chanratana",
+      "organization": "ក្លឹបធរណីវិទ្យាកម្ពុជា",
+      "role": "ក្រុមការងារ",
+      "phone": "0963533652",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "ជិន វ៉ាន់នី",
+        "relation": "ម្ដាយ",
+        "phone": "012479217"
+      }
+    },
+    {
+      "order": 14,
+      "id": "WRC2026-014",
+      "name_khmer": "សេង គុជ្ជមុន្នី",
+      "name_latin": "Seng Kuchmony",
+      "organization": "ក្លឹបធរណីវិទ្យាកម្ពុជា",
+      "role": "ក្រុមការងារ",
+      "phone": "081297854",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "ផង់ ស្រីមុំ",
+        "relation": "ម្ដាយ",
+        "phone": "012979658"
+      }
+    },
+    {
+      "order": 15,
+      "id": "WRC2026-015",
+      "name_khmer": "អាង មុយលី",
+      "name_latin": "Ang Muyly",
+      "organization": "ក្លឹបធរណីវិទ្យាកម្ពុជា",
+      "role": "ក្រុមការងារ",
+      "phone": "0974300495",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "គី សុខនី",
+        "relation": "ម្ដាយ",
+        "phone": "069234686"
+      }
+    },
+    {
+      "order": 16,
+      "id": "WRC2026-016",
+      "name_khmer": "យ៉េន ម៉ារ៉ា",
+      "name_latin": "Yen Mara",
+      "organization": "ក្លឹបធរណីវិទ្យាកម្ពុជា",
+      "role": "ក្រុមការងារ",
+      "phone": "099943618",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "ឆាន អេងលី",
+        "relation": "ឱពុក",
+        "phone": "085557411"
+      }
+    },
+    {
+      "order": 17,
+      "id": "WRC2026-017",
+      "name_khmer": "យក់ នរិន្ទ",
+      "name_latin": "Yok Norin",
+      "organization": "ក្លឹបធរណីវិទ្យាកម្ពុជា",
+      "role": "ក្រុមការងារ",
+      "phone": "099245618",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "យក់ សេដ្ឋា",
+        "relation": "ឱពុក",
+        "phone": "016579555"
+      }
+    },
+    {
+      "order": 18,
+      "id": "WRC2026-018",
+      "name_khmer": "អ៊ូ អ៊ីឈាន",
+      "name_latin": "Ou Echean",
+      "organization": "ក្លឹបធរណីវិទ្យាកម្ពុជា",
+      "role": "ក្រុមការងារ",
+      "phone": "068280880",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "កែម កន្និដ្ឋា",
+        "relation": "មីង",
+        "phone": "010616655"
+      }
+    },
+    {
+      "order": 19,
+      "id": "WRC2026-019",
+      "name_khmer": "ជា សុខពៅ",
+      "name_latin": "Chea Sokpov",
+      "organization": "ក្លឹបធរណីវិទ្យាកម្ពុជា",
+      "role": "ក្រុមការងារ",
+      "phone": "0968672722",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": null,
+        "relation": null,
+        "phone": null
+      }
+    },
+    {
+      "order": 20,
+      "id": "WRC2026-020",
+      "name_khmer": "ថាក់ ខេវីន",
+      "name_latin": "Thak Kevin",
+      "organization": "សាលាបញ្ញាសាស្ត្រអន្តរជាតិសាខាទី១",
+      "role": "បេក្ខជនប្រកួត",
+      "phone": "017999494",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "ឈួ ច័ន្ទស្រ៊ីអេង",
+        "relation": "ម្ដាយ",
+        "phone": "011220302"
+      }
+    },
+    {
+      "order": 21,
+      "id": "WRC2026-021",
+      "name_khmer": "ជា យូអ័រ",
+      "name_latin": "Chea Youeur",
+      "organization": "វិទ្យាល័យហ៊ុនសែនចំការលើ",
+      "role": "បេក្ខជនប្រកួត",
+      "phone": "078956656",
+      "address": "កំពង់ចាម",
+      "emergency_contact": {
+        "name": "អោក សុខលាភ",
+        "relation": "ម្ដាយ",
+        "phone": "077956656"
+      }
+    },
+    {
+      "order": 22,
+      "id": "WRC2026-022",
+      "name_khmer": "គួយ វួចជូ",
+      "name_latin": "Kuoy Vuochju",
+      "organization": "សាលារៀនអន្តរទ្វីបអាមេរិកាំង",
+      "role": "បេក្ខជនប្រកួត",
+      "phone": "017487745",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "គួយ វួចលី",
+        "relation": "បងស្រី",
+        "phone": "012366996"
+      }
+    },
+    {
+      "order": 23,
+      "id": "WRC2026-023",
+      "name_khmer": "ស្រ៊ុន ឧដ្ឋារិនី",
+      "name_latin": "Srun Oudthariny",
+      "organization": "វិទ្យាល័យព្រះយុគន្ធរ សាលារៀនជំនាន់ថ្មី",
+      "role": "បេក្ខជនប្រកួត",
+      "phone": "010841741",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "ស្រ៊ុន សៀងហួរ",
+        "relation": "ឪពុក",
+        "phone": "012549947"
+      }
+    },
+    {
+      "order": 24,
+      "id": "WRC2026-024",
+      "name_khmer": "សែម គីមយ៉ាង",
+      "name_latin": "Sem Kimyang",
+      "organization": "វិទ្យាល័យព្រះយុគន្ធរ សាលារៀនជំនាន់ថ្មី",
+      "role": "បេក្ខជនប្រកួត",
+      "phone": "089903917",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "ឆេង នីតា",
+        "relation": "ម្ដាយ",
+        "phone": "016273788"
+      }
+    },
+    {
+      "order": 25,
+      "id": "WRC2026-025",
+      "name_khmer": "ហាក់ ចន្ទសិរីរ័តន៍",
+      "name_latin": "Hak Chansereyroth",
+      "organization": "សាលារៀនជំនាន់ថ្មី វិទ្យាល័យព្រះយុគន្ធរ",
+      "role": "បេក្ខជនប្រកួត",
+      "phone": "0965525111",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "រស់ ច័ន្ទសោភា",
+        "relation": "ម្ដាយ",
+        "phone": "0965959096"
+      }
+    },
+    {
+      "order": 26,
+      "id": "WRC2026-026",
+      "name_khmer": "ហួត កែវវីរិយា",
+      "name_latin": "Huoth Keoviriya",
+      "organization": "សាលាបញ្ញាសាស្ត្រអន្តរជាតិ",
+      "role": "បេក្ខជនប្រកួត",
+      "phone": "098484816",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "ហួតកែវកុសល",
+        "relation": "ឪពុក",
+        "phone": "099515136"
+      }
+    },
+    {
+      "order": 27,
+      "id": "WRC2026-027",
+      "name_khmer": "ផល្លា តារាវិជ្ជា",
+      "name_latin": "Phalla Daravichea",
+      "organization": "សាលាអន្តរជាតិផារ៉ាហ្គន",
+      "role": "បេក្ខជនប្រកួត",
+      "phone": "010760909",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "សួន សុីអាត",
+        "relation": "យាយ",
+        "phone": "017960707"
+      }
+    },
+    {
+      "order": 28,
+      "id": "WRC2026-028",
+      "name_khmer": "ថន ដាណែល",
+      "name_latin": "Than Danel",
+      "organization": "បញ្ញាសាស្រ្តឈូកវ៉ា២",
+      "role": "បេក្ខជនប្រកួត",
+      "phone": "010695123",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "Kong Chanthan",
+        "relation": "ឪពុក",
+        "phone": "012898557"
+      }
+    },
+    {
+      "order": 29,
+      "id": "WRC2026-029",
+      "name_khmer": "លឹម ហុង",
+      "name_latin": "Loem Hong",
+      "organization": "សាលាបញ្ញាសាស្ត្រអន្តរជាតិ",
+      "role": "បេក្ខជនប្រកួត",
+      "phone": "070784641",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "Than Daniel",
+        "relation": "មិត្ត",
+        "phone": "010695123"
+      }
+    },
+    {
+      "order": 30,
+      "id": "WRC2026-030",
+      "name_khmer": "គីវ បញ្ញវត្តី",
+      "name_latin": "Kiv Panhavatey",
+      "organization": "វិទ្យាស្ថានគរុកោសល្យរាជធានីភ្នំពេញ",
+      "role": "បេក្ខជនប្រកួត",
+      "phone": "0887605507",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "គីវ កាក់នីកា",
+        "relation": "បងស្រី",
+        "phone": "0976272862"
+      }
+    },
+    {
+      "order": 31,
+      "id": "WRC2026-031",
+      "name_khmer": "ហាន សីហរដ្ឋ",
+      "name_latin": "Han Siharath",
+      "organization": "សាលាបញ្ញាសាស្ត្រអន្តរជាតិសាខាទី១",
+      "role": "បេក្ខជនប្រកួត",
+      "phone": "015642974",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "ម៉ី ធីតា",
+        "relation": "ម្ដាយ",
+        "phone": "0964414289"
+      }
+    },
+    {
+      "order": 32,
+      "id": "WRC2026-032",
+      "name_khmer": "ងី ស៊ូម៉ី",
+      "name_latin": "Ngy Sumey",
+      "organization": "វិទ្យាល័យហ៊ុនសែនចំការលើ",
+      "role": "បេក្ខជនប្រកួត",
+      "phone": "081644486",
+      "address": "កំពង់ចាម",
+      "emergency_contact": {
+        "name": "វ៉ាន់ វត្តី",
+        "relation": "ម្ដាយ",
+        "phone": "012808086"
+      }
+    },
+    {
+      "order": 33,
+      "id": "WRC2026-033",
+      "name_khmer": "សាន ចន្ទម៉ាណា",
+      "name_latin": "San Chanmana",
+      "organization": "សាលារៀនអន្តរទ្វីបអាមេរិកាំង",
+      "role": "បេក្ខជនប្រកួត",
+      "phone": "087609906",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "សាន សុវណ្ណដានិច្ច",
+        "relation": "បងស្រី",
+        "phone": "015850898"
+      }
+    },
+    {
+      "order": 34,
+      "id": "WRC2026-034",
+      "name_khmer": "រិន្ទ រ៉េតនីរ័ត្ន",
+      "name_latin": "Rin Rethnirath",
+      "organization": "វិទ្យាល័យព្រះយុគន្ធរ សាលារៀនជំនាន់ថ្មី",
+      "role": "បេក្ខជនប្រកួត",
+      "phone": "010626602",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "ថេង ឧត្តមធាវី",
+        "relation": "ម្ដាយ",
+        "phone": "016616607"
+      }
+    },
+    {
+      "order": 35,
+      "id": "WRC2026-035",
+      "name_khmer": "ហង្ស យុត្តិមុនី",
+      "name_latin": "Hang Youtakmuny",
+      "organization": "វិទ្យាល័យព្រះយុគន្ធរ សាលារៀនជំនាន់ថ្មី",
+      "role": "បេក្ខជនប្រកួត",
+      "phone": "078846489",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "ហ៊ុច ផល្លីន",
+        "relation": "ម្ដាយ",
+        "phone": "0977312563"
+      }
+    },
+    {
+      "order": 36,
+      "id": "WRC2026-036",
+      "name_khmer": "ឈឿង សិរីសត្យា",
+      "name_latin": "Chhoeung Sereysathya",
+      "organization": "សាលារៀនជំនាន់ថ្មីវិទ្យាល័យព្រះយុគន្ធរ",
+      "role": "បេក្ខជនប្រកួត",
+      "phone": "0962249759",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "ណ ចាន់ណា",
+        "relation": "ម្ដាយ",
+        "phone": "098661897"
+      }
+    },
+    {
+      "order": 37,
+      "id": "WRC2026-037",
+      "name_khmer": "នូ នុភារ",
+      "name_latin": "Nou Nupheareak",
+      "organization": "សាលាបញ្ញាសាស្ត្រអន្តរជាតិ",
+      "role": "បេក្ខជនប្រកួត",
+      "phone": "014829145",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "ទ្រី សុខលីម",
+        "relation": "ម្ដាយ",
+        "phone": "011990198"
+      }
+    },
+    {
+      "order": 38,
+      "id": "WRC2026-038",
+      "name_khmer": "ឡុច ប៊ីដាយ៉ាណា",
+      "name_latin": "Louch Bidayana",
+      "organization": "សាលាព្រះស៊ីសុវត្ថិជំនាន់ថ្មី",
+      "role": "បេក្ខជនប្រកួត",
+      "phone": "012542356",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "លុច ពីដា",
+        "relation": "ឪពុក",
+        "phone": "017750909"
+      }
+    },
+    {
+      "order": 39,
+      "id": "WRC2026-039",
+      "name_khmer": "ខាន់ សុខារតន៍",
+      "name_latin": "Khann Sokharoth",
+      "organization": "បញ្ញាសាស្រ្តឈូកវ៉ា២",
+      "role": "បេក្ខជនប្រកួត",
+      "phone": "069577071",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "អ៊ុំ ចរិយា",
+        "relation": "ម្ដាយ",
+        "phone": "069788585"
+      }
+    },
+    {
+      "order": 40,
+      "id": "WRC2026-040",
+      "name_khmer": "ថនដាណែត",
+      "name_latin": "Than Danet",
+      "organization": "សាលាបញ្ញាសាស្ត្រអន្តរជាតិ",
+      "role": "បេក្ខជនប្រកួត",
+      "phone": "069736267",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "Kong Chanthan",
+        "relation": "ឪពុក",
+        "phone": "012898557"
+      }
+    },
+    {
+      "order": 41,
+      "id": "WRC2026-041",
+      "name_khmer": "ភុន សៀវទី",
+      "name_latin": "Phun Seavty",
+      "organization": "វិទ្យាស្ថានគរុកោសល្យរាជធានីភ្នំពេញ",
+      "role": "បេក្ខជនប្រកួត",
+      "phone": "0976166870",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "គុជ បុណ្ណាមី",
+        "relation": "បងស្រី",
+        "phone": "077895640"
+      }
+    },
+    {
+      "order": 42,
+      "id": "WRC2026-042",
+      "name_khmer": "ហុក ស្រីនាង",
+      "name_latin": "Hok Sreyneang",
+      "organization": "បញ្ញាសាស្រ្តឈូកវ៉ា២",
+      "role": "បេក្ខជនប្រកួត",
+      "phone": "077880387",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "អៀន ស្រីនិត",
+        "relation": "បងស្រី",
+        "phone": "012860653"
+      }
+    },
+    {
+      "order": 43,
+      "id": "WRC2026-043",
+      "name_khmer": "ចាន់ វីរ:បុត្រ",
+      "name_latin": "Chan Vireakboth",
+      "organization": "បញ្ញាសាស្រ្តអន្តរជាតិ",
+      "role": "បេក្ខជនប្រកួត",
+      "phone": "077478883",
+      "address": "រាជធានីភ្នំពេញ",
+      "emergency_contact": {
+        "name": "ចាន់សុីណាត",
+        "relation": "ឪពុក",
+        "phone": "012616313"
+      }
+    }
+  ]
+}
+}
