@@ -9,7 +9,7 @@ export default function WrcList() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:4000/wrc/")
+    fetch(`${import.meta.env.VITE_API_URL}/wrc/`)
       .then((res) => res.json())
       .then((data) => {
         setParticipants(data);

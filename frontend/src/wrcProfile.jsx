@@ -33,7 +33,7 @@ export default function WrcProfile() {
 
     const fetchProfile = async () => {
       try {
-        const res = await fetch("http://localhost:4000/wrc/");
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/wrc/`);
         if (!res.ok) throw new Error("Failed to fetch data");
 
         const allData = await res.json();
