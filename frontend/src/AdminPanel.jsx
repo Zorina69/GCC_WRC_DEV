@@ -260,24 +260,24 @@ function ParticipantModal({ mode, participant, event, onClose, onSave }) {
         <div className="ap-grid">
           <div className="ap-field">
             <label>Participant ID <span className="ap-field-required">*</span></label>
-            <input value={form.id} onChange={set("id")} placeholder="WRC2026-001" disabled={mode === "edit"} />
-            {mode === "add" && <span className="ap-field-hint">e.g. WRC2026-001</span>}
+            <input value={form.id} onChange={set("id")} placeholder="WRC2026-0xx" disabled={mode === "edit"} />
+            {mode === "add" && <span className="ap-field-hint">e.g. WRC2026-168</span>}
           </div>
           <div className="ap-field">
             <label>Role</label>
-            <input value={form.role} onChange={set("role")} placeholder="Driver / Official…" />
+            <input value={form.role} onChange={set("role")} placeholder="សមាជិក, ក្រុមការងារ, បេក្ខជន" />
           </div>
           <div className="ap-field">
             <label>Name (Khmer) <span className="ap-field-required">*</span></label>
-            <input value={form.name_khmer} onChange={set("name_khmer")} placeholder="ស្រស់ង កីមស្រិន" style={{ fontSize: "1rem" }} />
+            <input value={form.name_khmer} onChange={set("name_khmer")} placeholder="សុខ ពិសី" style={{ fontSize: "1rem" }} />
           </div>
           <div className="ap-field">
             <label>Name (Latin)</label>
-            <input value={form.name_latin} onChange={set("name_latin")} placeholder="Kim Srin" />
+            <input value={form.name_latin} onChange={set("name_latin")} placeholder="Sok Pisey" />
           </div>
           <div className="ap-field">
             <label>Organization</label>
-            <input value={form.organization} onChange={set("organization")} placeholder="Team / Club name" />
+            <input value={form.organization} onChange={set("organization")} placeholder="School/ Club Name" />
           </div>
           <div className="ap-field">
             <label>Phone</label>
@@ -285,7 +285,7 @@ function ParticipantModal({ mode, participant, event, onClose, onSave }) {
           </div>
           <div className="ap-field ap-grid-full">
             <label>Address</label>
-            <input value={form.address} onChange={set("address")} placeholder="ភ្នំពេញ" style={{ fontSize: "1rem" }} />
+            <input value={form.address} onChange={set("address")} placeholder="រាជធានីភ្នំពេញ" style={{ fontSize: "1rem" }} />
           </div>
         </div>
 
