@@ -1,6 +1,6 @@
 // frontend/src/wrcHome.jsx
 import { useState } from "react";
-import logoclub from "../public/esc_logo.png"
+import logoclub from "/esc_logo.png"
 const css = `
   @import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
 

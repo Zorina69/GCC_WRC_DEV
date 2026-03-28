@@ -63,17 +63,17 @@ export default function WrcList() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Hanuman:wght@400;700;900&display=swap');
-        
+       @import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+
         .list-page {
           min-height: 100vh;
           background: linear-gradient(135deg, #e8f4fd 0%, #d0eaf8 100%);
           padding: 40px 20px;
-          font-family: 'Hanuman', sans-serif;
+           font-family: 'Kantumruy Pro', sans-serif;
         }
         .container { max-width: 680px; margin: 0 auto; }
         .header { text-align: center; margin-bottom: 40px; }
-        .header h1 { font-size: clamp(26px, 5vw, 34px); color: #1d88c7; margin: 0 0 8px 0; }
+        .header h1 { font-size: clamp(26px, 5vw, 34px); color: #1d88c7; margin: 0 0 8px 0; font-family: 'Kantumruy Pro', sans-serif; }
         .header p { font-size: 18px; color: #0a1f6e; }
 
         .search-container { position: relative; margin-bottom: 30px; }
