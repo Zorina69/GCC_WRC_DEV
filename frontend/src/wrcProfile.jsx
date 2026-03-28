@@ -2,6 +2,15 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import profileImage from "./assets/default-profile.png";
 
+// ── Build image path from participant ID ──────────────────────────────────────
+// Images should be in: frontend/public/images/WRC2026-001.jpg
+// Change the folder path and extension below to match your setup
+const getProfileImage = (id) => {
+  if (!id) return profileImage;
+  // Try jpg first — if you use png change to .png
+  return `/images/${id}.png`;
+};
+
 const InfoField = ({ label, sublabel, value }) => {
   if (!value || value === "—") return null;
   return (
@@ -23,6 +32,7 @@ export default function WrcProfile() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [activeTab, setActiveTab] = useState("personal");
+  const [imgError, setImgError] = useState(false); // fallback if image missing
 
   useEffect(() => {
     if (!tempId) {
@@ -38,26 +48,20 @@ export default function WrcProfile() {
 
         const allData = await res.json();
 
-        // Improved matching for full Temp ID
         const found = allData.find((person) => {
           const baseId = String(person.id || person._id || person.studentId || "");
           const generatedTemp = `wrc-${baseId.padStart(6, "0")}`;
-
-          // Match full tempId or the base part
           return (
             tempId === person.tempId ||
             tempId.includes(generatedTemp) ||
             generatedTemp.includes(tempId) ||
             tempId.includes(baseId) ||
-            person.nameKh?.includes(tempId) || 
+            person.nameKh?.includes(tempId) ||
             person.nameLatin?.includes(tempId)
           );
         });
 
-        if (!found) {
-          throw new Error("Profile not found");
-        }
-
+        if (!found) throw new Error("Profile not found");
         setProfile(found);
       } catch (err) {
         console.error("Error finding profile:", err);
@@ -83,25 +87,12 @@ export default function WrcProfile() {
   if (error || !profile) {
     return (
       <div className="profile-page">
-        <div style={{ 
-          textAlign: "center", 
-          padding: "100px 20px", 
-          color: "#e74c3c" 
-        }}>
+        <div style={{ textAlign: "center", padding: "100px 20px", color: "#e74c3c" }}>
           <h2>រកមិនឃើញព័ត៌មានទេ 😔</h2>
           <p>Temp ID: <strong>{tempId}</strong></p>
-          <button 
+          <button
             onClick={() => navigate("/")}
-            style={{
-              marginTop: "30px",
-              padding: "12px 28px",
-              background: "#1d88c7",
-              color: "white",
-              border: "none",
-              borderRadius: "50px",
-              cursor: "pointer",
-              fontSize: "16px"
-            }}
+            style={{ marginTop: "30px", padding: "12px 28px", background: "#1d88c7", color: "white", border: "none", borderRadius: "50px", cursor: "pointer", fontSize: "16px" }}
           >
             ← ត្រឡប់ទៅទំព័រដើម
           </button>
@@ -110,11 +101,17 @@ export default function WrcProfile() {
     );
   }
 
+  // ── Resolve profile image ─────────────────────────────────────────────────
+  // Priority: 1) photo/image field from DB  2) /images/{id}.jpg  3) default
+  const participantId = profile.id || profile._id || profile.studentId;
+  const imageSrc = imgError
+    ? profileImage
+    : (profile.photo || profile.image || getProfileImage(participantId));
+
   return (
     <>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Hanuman:wght@400;700;900&display=swap');
-        /* Your original CSS - kept the same */
         *, *::before, *::after { box-sizing: border-box; }
         .profile-page {
           min-height: 100vh;
@@ -145,25 +142,18 @@ export default function WrcProfile() {
           border: 4px solid #fff;
           box-shadow: 0 6px 24px rgba(26, 141, 209, 0.25);
           overflow: hidden;
+          background: #f0f1f6;
         }
         .avatar-circle img { width: 100%; height: 100%; object-fit: cover; }
         .tab-bar { display: flex; background: #f0f1f6; border-radius: 20px; padding: 4px; margin: 0 16px 16px; }
         .tab-btn {
           flex: 1; padding: clamp(8px, 2vw, 11px) 0; border-radius: 20px; border: none;
           cursor: pointer; font-size: clamp(11px, 2.5vw, 13px); font-weight: 700;
-          background: transparent; color: #8a8fa8;
+          background: transparent; color: #8a8fa8; font-family: 'Hanuman', sans-serif;
         }
-        .tab-btn.active {
-          background: linear-gradient(135deg, #b8e4f9, #1a8fd1, #0a1f6e);
-          color: #fff;
-        }
+        .tab-btn.active { background: linear-gradient(135deg, #b8e4f9, #1a8fd1, #0a1f6e); color: #fff; }
         .fields-wrap { padding: 0 16px 32px; }
-        .info-field {
-          background: #f7f8fa;
-          border-radius: 14px;
-          padding: clamp(10px, 2.5vw, 14px) clamp(14px, 3vw, 18px);
-          margin-bottom: 10px;
-        }
+        .info-field { background: #f7f8fa; border-radius: 14px; padding: clamp(10px, 2.5vw, 14px) clamp(14px, 3vw, 18px); margin-bottom: 10px; }
         .info-label { font-size: clamp(10px, 2.2vw, 11px); color: #8a8fa8; margin-bottom: 4px; }
         .info-sublabel { margin-left: 5px; color: #b0b5c5; }
         .info-value { font-size: clamp(14px, 3.5vw, 17px); font-weight: 700; color: #1a1d2e; }
@@ -187,9 +177,10 @@ export default function WrcProfile() {
 
           <div className="avatar-wrap">
             <div className="avatar-circle">
-              <img 
-                src={profile.photo || profile.image || profileImage} 
-                alt={profile.nameKh || "Profile"} 
+              <img
+                src={imageSrc}
+                alt={profile.nameKh || participantId || "Profile"}
+                onError={() => setImgError(true)}
               />
             </div>
           </div>
@@ -197,7 +188,7 @@ export default function WrcProfile() {
           <div className="tab-bar">
             {[
               { key: "personal", label: "ព័ត៌មានផ្ទាល់ខ្លួន" },
-              { key: "other", label: "ព័ត៌មានផ្សេងៗ" },
+              { key: "other",    label: "ព័ត៌មានផ្សេងៗ" },
             ].map((tab) => (
               <button
                 key={tab.key}
@@ -212,18 +203,18 @@ export default function WrcProfile() {
           <div className="fields-wrap">
             {activeTab === "personal" ? (
               <>
-                <InfoField label="ឈ្មោះ" sublabel="NAME" value={profile.nameKh || profile.name_kh || profile.nameKhmer} />
-                <InfoField label="ឡាតាំង" sublabel="LATIN" value={profile.nameLatin || profile.name_latin} />
-                <InfoField label="មកពី" sublabel="FROM" value={profile.from || profile.class || profile.organization} />
-                <InfoField label="តួនាទី" sublabel="ROLE" value={profile.role} />
-                <InfoField label="លេខទូរស័ព្ទ" sublabel="PHONE" value={profile.phone} />
-                <InfoField label="អាសយដ្ឋាន" sublabel="ADDRESS" value={profile.address} />
+                <InfoField label="ឈ្មោះ"        sublabel="NAME"    value={profile.nameKh || profile.name_kh || profile.nameKhmer || profile.name_khmer} />
+                <InfoField label="ឡាតាំង"       sublabel="LATIN"   value={profile.nameLatin || profile.name_latin} />
+                <InfoField label="មកពី"          sublabel="FROM"    value={profile.from || profile.class || profile.organization} />
+                <InfoField label="តួនាទី"        sublabel="ROLE"    value={profile.role} />
+                <InfoField label="លេខទូរស័ព្ទ"   sublabel="PHONE"   value={profile.phone} />
+                <InfoField label="អាសយដ្ឋាន"    sublabel="ADDRESS" value={profile.address} />
               </>
             ) : (
               <>
-                <InfoField label="ឈ្មោះ" sublabel="NAME" value={profile.other?.name || profile.emergency_contact?.name} />
-                <InfoField label="ត្រូវជា" sublabel="ROLE" value={profile.other?.role || profile.emergency_contact?.relation} />
-                <InfoField label="លេខទូរស័ព្ទ" sublabel="PHONE" value={profile.other?.phone || profile.emergency_contact?.phone} />
+                <InfoField label="ឈ្មោះ"        sublabel="NAME"  value={profile.other?.name     || profile.emergency_contact?.name} />
+                <InfoField label="ត្រូវជា"       sublabel="ROLE"  value={profile.other?.role     || profile.emergency_contact?.relation} />
+                <InfoField label="លេខទូរស័ព្ទ"   sublabel="PHONE" value={profile.other?.phone    || profile.emergency_contact?.phone} />
               </>
             )}
           </div>

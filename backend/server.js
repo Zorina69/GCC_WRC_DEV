@@ -1,7 +1,9 @@
+// backend/server.js
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import wrcRoute from "./routes/profile.js";
+import participantsRoute from "./routes/participant.js";
 
 dotenv.config();
 
@@ -11,6 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/wrc", wrcRoute);
+app.use("/participant", participantsRoute);
 
 app.get("/", (req, res) => {
   res.send("Backend is running 🚀");

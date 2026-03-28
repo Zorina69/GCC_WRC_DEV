@@ -1,16 +1,24 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import WrcList from "./wrcList";           // ← List of all participants
-import WrcProfile from "./wrcProfile";     // ← Detail page (the beautiful card you like)
+import WrcList from "./wrcList";
+import WrcProfile from "./wrcProfile";
 import AllTempUrls from "./wrcAllurl";
+import AdminPanel from "./AdminPanel";       // ← ADD this import
+import MainPage from "./ESCmainpage";
 
 function App() {
   return (
     <Router>
       <Routes>
         {/* Home / List Page */}
-        <Route path="/" element={<WrcList />} />
+        <Route path="/" element={<MainPage />} />
 
-        {/* ✅ Must be BEFORE /wrc/:tempId */}
+        {/* Home / List Page */}
+        <Route path="/wrc" element={<WrcList />} />
+
+        {/* Admin Panel */}
+        <Route path="/admin" element={<AdminPanel />} />   {/* ← ADD this route */}
+
+        {/* Must be BEFORE /wrc/:tempId */}
         <Route path="/wrc/all-urls" element={<AllTempUrls />} />
 
         {/* Detail Page with Temporary ID in URL */}
