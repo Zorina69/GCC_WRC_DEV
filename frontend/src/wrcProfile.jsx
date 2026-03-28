@@ -13,7 +13,7 @@ const getProfileImage = (id) => {
 
 const InfoField = ({ label, sublabel, value }) => {
   const displayValue =
-    value && value !== "—" ? value : "None"; // 👈 fallback text
+    value && value !== "—" ? value : "មិនមានព័ត៌មាន "; // 👈 fallback text
 
   return (
     <div className="info-field">
