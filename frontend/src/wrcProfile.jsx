@@ -12,17 +12,20 @@ const getProfileImage = (id) => {
 };
 
 const InfoField = ({ label, sublabel, value }) => {
-  if (!value || value === "—") return null;
+  const displayValue =
+    value && value !== "—" ? value : "None"; // 👈 fallback text
+
   return (
     <div className="info-field">
       <div className="info-label">
         {label}
         {sublabel && <span className="info-sublabel"> / {sublabel}</span>}
       </div>
-      <div className="info-value">{value}</div>
+      <div className="info-value">{displayValue}</div>
     </div>
   );
 };
+
 
 export default function WrcProfile() {
   const { tempId } = useParams();
