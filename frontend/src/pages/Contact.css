@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+.contact {
+  background: #f8faf7;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.page-header {
+  background: linear-gradient(135deg, #1a3a2a 0%, #2d5a3d 100%);
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-family: 'Kantumruy Pro', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.page-header p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Contact Main Section */
+.contact-main {
+  padding: 4rem 2rem;
+  background: #fff;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.contact-form-wrapper h2,
+.contact-info-wrapper h2 {
+  font-family: 'Kantumruy Pro', sans-serif;
+  font-size: 1.8rem;
+  color: #1a3a2a;
+  margin-bottom: 2rem;
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  color: #1a3a2a;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.9rem;
+  border: 2px solid rgba(74, 122, 85, 0.2);
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f8faf7;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4ade80;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(74, 122, 85, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn-submit {
+  background: #4ade80;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  background: #22c55e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 122, 85, 0.3);
+}
+
+.success-message {
+  background: #d4edda;
+  color: #155724;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border-left: 4px solid #28a745;
+}
+
+/* Contact Info */
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.info-card {
+  background: linear-gradient(135deg, #f0f5ee 0%, #e8f1e6 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 4px solid #4ade80;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateX(8px);
+  box-shadow: 0 8px 25px rgba(74, 122, 85, 0.15);
+}
+
+.info-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.info-card h3 {
+  color: #1a3a2a;
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.info-card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Map Section */
+.map-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f0f5ee 0%, #e8f1e6 100%);
+}
+
+.section-title {
+  font-family: 'Kantumruy Pro', sans-serif;
+  font-size: 2.2rem;
+  color: #1a3a2a;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.map-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  height: 400px;
+}
+
+.map-placeholder {
+  background: linear-gradient(135deg, #1a3a2a 0%, #2d5a3d 100%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.map-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.map-placeholder p:first-of-type {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Social Section */
+.social-section {
+  padding: 4rem 2rem;
+  background: #fff;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.social-card {
+  background: linear-gradient(135deg, #f0f5ee 0%, #e8f1e6 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.social-card:hover {
+  border-color: #4ade80;
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(74, 122, 85, 0.15);
+}
+
+.social-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.social-card h3 {
+  color: #1a3a2a;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.social-card p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f0f5ee 0%, #e8f1e6 100%);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.faq-item {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  border-top: 4px solid #4ade80;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(74, 122, 85, 0.15);
+}
+
+.faq-item h3 {
+  color: #1a3a2a;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.faq-item p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-form-wrapper h2,
+  .contact-info-wrapper h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-container {
+    height: 300px;
+  }
+
+  .social-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+.schedule {
+  background: #f8faf7;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.page-header {
+  background: linear-gradient(135deg, #1a3a2a 0%, #2d5a3d 100%);
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-family: 'Kantumruy Pro', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.page-header p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Schedule Timeline */
+.schedule-timeline {
+  padding: 4rem 2rem;
+  background: #fff;
+}
+
+.month-section {
+  margin-bottom: 3rem;
+}
+
+.month-title {
+  font-family: 'Kantumruy Pro', sans-serif;
+  font-size: 1.8rem;
+  color: #1a3a2a;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #4ade80;
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.schedule-item {
+  display: grid;
+  grid-template-columns: 180px 20px 1fr;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.schedule-left {
+  text-align: right;
+}
+
+.schedule-date {
+  color: #4ade80;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.schedule-middle {
+  position: relative;
+  height: 100%;
+}
+
+.schedule-line {
+  width: 4px;
+  background: #4ade80;
+  height: 100%;
+  border-radius: 2px;
+  position: relative;
+}
+
+.schedule-line::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background: #4ade80;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 0 0 2px #4ade80;
+}
+
+.schedule-right {
+  background: linear-gradient(135deg, #f0f5ee 0%, #e8f1e6 100%);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #4ade80;
+}
+
+.schedule-right h3 {
+  color: #1a3a2a;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.schedule-time {
+  color: #666;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.btn-detail {
+  background: #4ade80;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-detail:hover {
+  background: #22c55e;
+  transform: translateX(4px);
+}
+
+/* Calendar Section */
+.calendar-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f0f5ee 0%, #e8f1e6 100%);
+}
+
+.section-title {
+  font-family: 'Kantumruy Pro', sans-serif;
+  font-size: 2rem;
+  color: #1a3a2a;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.calendar-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.calendar-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.calendar-card h3 {
+  color: #1a3a2a;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.cal-day {
+  text-align: center;
+  padding: 0.5rem;
+  font-weight: 600;
+  color: #1a3a2a;
+  font-size: 0.85rem;
+}
+
+.cal-date {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: rgba(74, 122, 85, 0.05);
+  color: #666;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.cal-date.event {
+  background: #4ade80;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Legend Section */
+.legend-section {
+  padding: 4rem 2rem;
+  background: #f8faf7;
+}
+
+.legend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.legend-item {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.legend-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(74, 122, 85, 0.15);
+}
+
+.legend-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.legend-item h3 {
+  color: #1a3a2a;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.legend-item p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .schedule-item {
+    grid-template-columns: 100px 20px 1fr;
+    gap: 1rem;
+  }
+
+  .schedule-date {
+    font-size: 0.95rem;
+  }
+
+  .calendar-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
