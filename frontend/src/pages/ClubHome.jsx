@@ -12,9 +12,6 @@ export default function ClubHome() {
       <section className="hero">
         <div className="hero-overlay"></div>
         <div className="hero-content coming-soon-content">
-          <div className="hero-logo-wrapper">
-            <img src={logoclub} alt="Club Logo" className="hero-logo" />
-          </div>
           
           <h1 className="hero-title">{t("clubName")}</h1>
           <p className="hero-subtitle">{t("clubNameEng")}</p>
