@@ -10,7 +10,7 @@ import Contact from "./pages/Contact";
 import AdminPanel from "./AdminPanel";
 import MainPage from "./ESCmainpage";
 import EscList from "./esc/escList";
-import EscAllUrls from "./esc/escAllUrl";
+import EscAllUrls from "./esc/escAllurl";
 import EscProfile from "./esc/escProfile";
 import "./App.css";
 
