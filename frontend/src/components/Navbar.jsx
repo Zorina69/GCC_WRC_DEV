@@ -30,8 +30,8 @@ export default function Navbar() {
           <Link to="/" className="navbar-logo">
             <img src={logoclub} alt="Club Logo" className="navbar-logo-img" />
             <div className="navbar-logo-text">
-              <span className="navbar-title">ក្លឹបធរណីវិទ្យា</span>
-              <span className="navbar-subtitle">Geology Club Cambodia</span>
+              <span className="navbar-title">ក្លឹបធរណីវិទ្យាកម្ពុជា</span>
+              <span className="navbar-subtitle">Geology Club, Cambodia</span>
             </div>
           </Link>
 

@@ -1,5 +1,5 @@
 import logoclub from "/esc_logo.png";
-import "./ClubHome.css";
+import "./escPage.css";
 
 const LeafSvg = ({ style }) => (
   <svg className="cs-leaf" style={style} viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -13,7 +13,7 @@ const LeafSvg = ({ style }) => (
   </svg>
 );
 
-export default function ClubHome() {
+export default function Esc2026() {
   return (
     <div className="cs-root">
       <div className="cs-top-line" />
@@ -34,9 +34,9 @@ export default function ClubHome() {
         />
         <div className="cs-logo-fallback" style={{ display: "none" }}>🌍</div>
 
-        <p className="cs-eyebrow">Earth Science Competition · ESC 2026</p>
-        <h1 className="cs-title-kh">ក្លឹបធរណីវិទ្យាកម្ពុជា</h1>
-        <p className="cs-title-en">Geology Club, Cambodia</p>
+        <p className="cs-eyebrow">Earth Science Competition</p>
+        <h1 className="cs-title-kh">កម្មវិធីប្រកួតប្រជែងផែនដីវិទ្យា</h1>
+        <p className="cs-title-en">ESC</p>
 
         <div className="cs-divider">
           <div className="cs-divider-line" />

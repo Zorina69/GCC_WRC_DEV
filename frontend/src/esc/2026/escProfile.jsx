@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import profileImage from "../assets/default-profile.png";
+import profileImage from "../../assets/default-profile.png";
 
 // Match image path: /esc2026/ESC2026-001.png using "id" field
 const getProfileImage = (id) => {
@@ -190,8 +190,9 @@ export default function EscProfile() {
 
           <div className="card-title-block">
             <div className="card-title-main">កម្មវិធីប្រកួតប្រជែងផែនដីវិទ្យា</div>
-            <div className="card-title-sub">Earth Science Competition — លើកទី៦</div>
-            <div className="card-title-year">ESC 2026</div>
+            <div className="card-title-sub">Earth Science Competition</div>
+            <div className="card-title-year">លើកទី៦ ឆ្នាំ២០២៦</div>
+            <div className="card-title-sub">ESC 2026</div>
           </div>
 
           <div className="avatar-wrap">

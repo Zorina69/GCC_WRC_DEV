@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import profileImage from "../assets/default-profile.png";
+import profileImage from "../../assets/default-profile.png";
 
 // Match image path: /esc2026/ESC2026-001.png using "id" field
 const getProfileImage = (id) => {
@@ -103,6 +103,14 @@ export default function EscList() {
           margin: 0 0 8px 0;
         }
         .header p { font-size: 17px; color: #1b5e20; }
+        .card-title-main {
+          font-size: clamp(16px, 4vw, 21px);
+          font-weight: 800;
+          color: #2e7d32;
+        }
+        .card-title-sub { font-size: clamp(12px, 2.8vw, 14px); color: #8a8fa8; margin-top: 4px; }
+        .card-title-year { font-size: clamp(14px, 3.2vw, 18px); color: #2e7d32; margin-top: 2px; font-weight: 700; }
+
 
         .search-container { position: relative; margin-bottom: 30px; }
         .search-input {
@@ -177,8 +185,10 @@ export default function EscList() {
       <div className="list-page">
         <div className="container">
           <div className="header">
-            <h1>🌍 កម្មវិធីប្រកួតប្រជែងផែនដីវិទ្យា</h1>
-            <p>Earth Science Competition — ESC 2026</p>
+            <div className="card-title-main">កម្មវិធីប្រកួតប្រជែងផែនដីវិទ្យា</div>
+            <div className="card-title-sub">Earth Science Competition</div>
+            <div className="card-title-year">លើកទី៦ ឆ្នាំ២០២៦</div>
+            <div className="card-title-sub">ESC 2026</div>
           </div>
 
           <div className="search-container">
