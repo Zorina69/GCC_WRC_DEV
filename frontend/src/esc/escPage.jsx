@@ -34,9 +34,9 @@ export default function Esc2026() {
         />
         <div className="cs-logo-fallback" style={{ display: "none" }}>🌍</div>
 
-        <p className="cs-eyebrow">Earth Science Competition</p>
+        
         <h1 className="cs-title-kh">កម្មវិធីប្រកួតប្រជែងផែនដីវិទ្យា</h1>
-        <p className="cs-title-en">ESC</p>
+        <p className="cs-title-en">Earth Science Competition (ESC)</p>
 
         <div className="cs-divider">
           <div className="cs-divider-line" />

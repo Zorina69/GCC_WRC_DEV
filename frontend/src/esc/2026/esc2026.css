@@ -79,7 +79,7 @@
 
 .cs-title-en {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(15px, 3vw, 21px);
+  font-size: clamp(20px, 7vw, 30px);
   font-weight: 400;
   font-style: italic;
   color: #5a7a3a;

@@ -30,7 +30,7 @@ export default function AllTempUrls() {
   };
 
   const getFullUrl = (tempId) => {
-    return `${window.location.origin}/esc2026/${tempId}`;
+    return `${window.location.origin}/esc/esc2026/${tempId}`;
   };
 
   if (loading) {

@@ -34,7 +34,6 @@ export default function ClubHome() {
         />
         <div className="cs-logo-fallback" style={{ display: "none" }}>🌍</div>
 
-        <p className="cs-eyebrow">Earth Science Competition · ESC 2026</p>
         <h1 className="cs-title-kh">ក្លឹបធរណីវិទ្យាកម្ពុជា</h1>
         <p className="cs-title-en">Geology Club, Cambodia</p>
 
