@@ -6,7 +6,7 @@ const router = express.Router();
 // GET profile
 router.get("/", async (req, res) => {
   try {
-    const snapshot = await db.ref("WRC_2026/participants").get();
+    const snapshot = await db.ref("ESC_2026/participants").get();
 
     if (!snapshot.exists()) {
       return res.status(404).json({ message: "No participants found" });
@@ -22,7 +22,7 @@ router.get("/:id", async (req, res) => {
   try {
     const { id } = req.params;
 
-    const snapshot = await db.ref("WRC_2026/participants").get();
+    const snapshot = await db.ref("ESC_2026/participants").get();
     const data = snapshot.val();
 
     const participant = data.find((p) => p.id === id);

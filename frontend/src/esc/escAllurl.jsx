@@ -117,7 +117,7 @@ export default function AllTempUrls() {
             return (
               <div key={index} className="url-item">
                 <div className="name">
-                  {person.nameKh || person.name_kh || person.nameKhmer || "Unknown"}
+                  { person.name_khmer || "Unknown"}
                   <br />
                   <small style={{ color: "#666", fontWeight: "normal" }}>
                     {person.nameLatin || person.name_latin}

@@ -1,5 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import profileImage from "../assets/default-profile.png";
+
+// Match image path: /esc2026/ESC2026-001.png using "id" field
+const getProfileImage = (id) => {
+  if (!id) return profileImage;
+  return `/esc2026_images/ID ${id}.png`;
+};
 
 export default function EscList() {
   const [participants, setParticipants] = useState([]);
@@ -11,7 +18,14 @@ export default function EscList() {
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/esc2026/`)
       .then((res) => res.json())
-      .then((data) => {
+      .then((raw) => {
+        // Firebase returns an object { "0": {...}, "1": {...} } or array
+        // Normalize to a flat array either way
+        const data = Array.isArray(raw)
+          ? raw
+          : Object.values(raw).flatMap((v) =>
+              Array.isArray(v) ? v : Object.values(v)
+            );
         setParticipants(data);
         setLoading(false);
       })
@@ -22,13 +36,12 @@ export default function EscList() {
       });
   }, []);
 
-  // UUID from Supabase used directly as Temp ID with "esc-" prefix
+  // Temp ID = "esc-ESC2601" using Firebase "id" field
   const getTempId = (person) => {
-    const uuid = person.id || person.uuid || "";
-    return `esc-${uuid}`;
+    return `esc-${person.id || ""}`;
   };
 
-  // Search by Temp ID (UUID) or name
+  // Search by Temp ID, Khmer name, or Latin name
   useEffect(() => {
     if (!searchTerm.trim()) {
       setFilteredResults([]);
@@ -39,12 +52,14 @@ export default function EscList() {
 
     const results = participants.filter((person) => {
       const tempId = getTempId(person).toLowerCase();
-      const nameKh = (person.nameKh || person.name_kh || person.nameKhmer || "").toLowerCase();
-      const nameLatin = (person.nameLatin || person.name_latin || "").toLowerCase();
+      const nameKh = (person.name_khmer || "").toLowerCase();
+      const nameLatin = (person.name_latin || "").toLowerCase();
+      const id = (person.id || "").toLowerCase();
       return (
         tempId.includes(term) ||
         nameKh.includes(term) ||
-        nameLatin.includes(term)
+        nameLatin.includes(term) ||
+        id.includes(term)
       );
     });
 
@@ -98,6 +113,7 @@ export default function EscList() {
           border-radius: 50px;
           outline: none;
           font-family: 'Kantumruy Pro', sans-serif;
+          box-sizing: border-box;
         }
         .search-input:focus {
           border-color: #2e7d32;
@@ -137,6 +153,7 @@ export default function EscList() {
           object-fit: cover;
           border: 2px solid #a5d6a7;
           background: #e8f5e9;
+          flex-shrink: 0;
         }
         .result-info .name-kh { font-size: 18px; font-weight: 700; color: #1b5e20; }
         .result-info .name-latin { font-size: 14px; color: #2e7d32; }
@@ -169,7 +186,7 @@ export default function EscList() {
             <input
               type="text"
               className="search-input"
-              placeholder="ស្វែងរកតាម Temp ID, ឈ្មោះ..."
+              placeholder="ស្វែងរកតាម ID (ESC2601), ឈ្មោះខ្មែរ, ឬឡាតាំង..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               autoFocus
@@ -181,26 +198,30 @@ export default function EscList() {
               {filteredResults.length > 0 ? (
                 filteredResults.map((person) => {
                   const tempId = getTempId(person);
+                  const avatarSrc = person.photo || getProfileImage(person.id);
                   return (
                     <Link
-                      key={person.id || person.uuid}
+                      key={person.id}
                       to={`/esc2026/${tempId}`}
                       className="result-item"
                     >
                       <img
-                        src={person.photo || `/esc2026/${person.id || person.uuid}.png`}
+                        src={avatarSrc}
                         alt=""
                         className="avatar-small"
-                        onError={(e) => { e.target.style.opacity = "0.3"; }}
+                        onError={(e) => {
+                          e.target.src = "/esc2026_images/default.png";
+                          e.target.onerror = null;
+                        }}
                       />
                       <div className="result-info">
                         <div className="name-kh">
-                          {person.nameKh || person.name_kh || person.nameKhmer || "—"}
+                          {person.name_khmer || "—"}
                         </div>
                         <div className="name-latin">
-                          {person.nameLatin || person.name_latin || "—"}
+                          {person.name_latin || "—"}
                         </div>
-                        <div className="temp-id">ID: {tempId}</div>
+                        <div className="temp-id">ID: {person.id}</div>
                       </div>
                     </Link>
                   );
@@ -213,7 +234,7 @@ export default function EscList() {
             </div>
           ) : (
             <div className="hint">
-              សូមវាយ Temp ID ឬឈ្មោះ ដើម្បីស្វែងរក...
+              សូមវាយ ID ឬឈ្មោះ ដើម្បីស្វែងរក...
             </div>
           )}
         </div>

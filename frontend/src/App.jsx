@@ -36,7 +36,7 @@ function App() {
           {/* ESC Pages */}
           <Route path="/esc2026" element={<EscList />} />
           <Route path="/esc2026/all-urls" element={<EscAllUrls/>} />
-          <Route path="/esc2026/:temId" element={<EscProfile />} />
+          <Route path="/esc2026/:tempId" element={<EscProfile />} />
 
           {/* Admin Panel */}
           <Route path="/admin" element={<AdminPanel />} />

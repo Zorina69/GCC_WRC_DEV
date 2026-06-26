@@ -2,12 +2,10 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import profileImage from "../assets/default-profile.png";
 
-// Images stored at: frontend/public/esc2026/ESC2026-001.png
-// The "no" field from Supabase is used to build the filename e.g. ESC2026-001
-const getProfileImage = (no) => {
-  if (!no) return profileImage;
-  const padded = String(no).padStart(3, "0");
-  return `/esc2026/ESC2026-${padded}.png`;
+// Match image path: /esc2026/ESC2026-001.png using "id" field
+const getProfileImage = (id) => {
+  if (!id) return profileImage;
+  return `/esc2026_images/ID ${id}.png`;
 };
 
 const InfoField = ({ label, sublabel, value }) => {
@@ -44,16 +42,24 @@ export default function EscProfile() {
         const res = await fetch(`${import.meta.env.VITE_API_URL}/esc2026/`);
         if (!res.ok) throw new Error("Failed to fetch data");
 
-        const allData = await res.json();
+        const raw = await res.json();
 
-        // tempId format: "esc-<uuid>"  →  strip prefix to get UUID
-        const uuidFromUrl = tempId.startsWith("esc-")
+        // Firebase returns an object { "0": {...}, "1": {...} } or an array
+        // Normalize to a flat array either way
+        const allData = Array.isArray(raw)
+          ? raw
+          : Object.values(raw).flatMap((v) =>
+              Array.isArray(v) ? v : Object.values(v)
+            );
+
+        // tempId format: "esc-ESC2601" → strip "esc-" prefix to get the id
+        const idFromUrl = tempId.startsWith("esc-")
           ? tempId.slice(4)
           : tempId;
 
+        // Match against Firebase "id" field e.g. "ESC2601"
         const found = allData.find((person) => {
-          const personId = String(person.id || person.uuid || "");
-          return personId === uuidFromUrl;
+          return String(person.id || "") === idFromUrl;
         });
 
         if (!found) throw new Error("Profile not found");
@@ -91,7 +97,7 @@ export default function EscProfile() {
               marginTop: "30px", padding: "12px 28px",
               background: "#2e7d32", color: "white",
               border: "none", borderRadius: "50px",
-              cursor: "pointer", fontSize: "16px"
+              cursor: "pointer", fontSize: "16px",
             }}
           >
             ← ត្រឡប់ទៅទំព័រដើម
@@ -101,10 +107,10 @@ export default function EscProfile() {
     );
   }
 
-  // Image priority: 1) photo/image field from DB  2) /esc2026/ESC2026-001.png  3) default
+  // Image priority: 1) photo field from DB  2) /esc2026/ESC2026-001.png  3) default
   const imageSrc = imgError
     ? profileImage
-    : (profile.photo || profile.image || getProfileImage(profile.no));
+    : (profile.photo || getProfileImage(profile.id));
 
   return (
     <>
@@ -192,7 +198,7 @@ export default function EscProfile() {
             <div className="avatar-circle">
               <img
                 src={imageSrc}
-                alt={profile.nameKh || profile.nameLatin || "Profile"}
+                alt={profile.name_khmer || profile.name_latin || "Profile"}
                 onError={() => setImgError(true)}
               />
             </div>
@@ -202,22 +208,22 @@ export default function EscProfile() {
             <InfoField
               label="លេខសំគាល់"
               sublabel="ID"
-              value={profile.no ? `ESC2026-${String(profile.no).padStart(3, "0")}` : "—"}
+              value={profile.id || "—"}
             />
             <InfoField
               label="គោត្តនាម និងនាម"
               sublabel="FULL NAME"
-              value={profile.nameKh || profile.name_kh || profile.nameKhmer || profile.name_khmer}
+              value={profile.name_khmer}
             />
             <InfoField
               label="ជាអក្សរឡាតាំង"
               sublabel="IN LATIN"
-              value={profile.nameLatin || profile.name_latin}
+              value={profile.name_latin}
             />
             <InfoField
               label="ស្ថាប័ន"
               sublabel="INSTITUTION"
-              value={profile.institution || profile.school || profile.organization || profile.from}
+              value={profile.organization}
             />
             <InfoField
               label="តួនាទី"
