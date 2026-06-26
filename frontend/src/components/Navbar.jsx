@@ -17,7 +17,6 @@ export default function Navbar() {
     { path: "/", label: t("home") },
     { path: "/about", label: t("about") },
     { path: "/events", label: t("events") },
-    { path: "/schedule", label: t("schedule") },
     { path: "/results", label: t("results") },
     { path: "/gallery", label: t("gallery") },
     { path: "/contact", label: t("contact") },

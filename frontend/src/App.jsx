@@ -4,15 +4,14 @@ import Navbar from "./components/Navbar";
 import ClubHome from "./pages/ClubHome";
 import About from "./pages/About";
 import Events from "./pages/Events";
-import Schedule from "./pages/Schedule";
 import Results from "./pages/Results";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
-import WrcList from "./wrcList";
-import WrcProfile from "./wrcProfile";
-import AllTempUrls from "./wrcAllurl";
 import AdminPanel from "./AdminPanel";
 import MainPage from "./ESCmainpage";
+import EscList from "./esc/escList";
+import EscAllUrls from "./esc/escAllUrl";
+import EscProfile from "./esc/escProfile";
 import "./App.css";
 
 function App() {
@@ -25,15 +24,19 @@ function App() {
           <Route path="/" element={<ClubHome />} />
           <Route path="/about" element={<About />} />
           <Route path="/events" element={<Events />} />
-          <Route path="/schedule" element={<Schedule />} />
           <Route path="/results" element={<Results />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
 
           {/* WRC Pages (for backward compatibility) */}
-          <Route path="/wrc" element={<WrcList />} />
+          {/* <Route path="/wrc" element={<WrcList />} />
           <Route path="/wrc/all-urls" element={<AllTempUrls />} />
-          <Route path="/wrc/:tempId" element={<WrcProfile />} />
+          <Route path="/wrc/:tempId" element={<WrcProfile />} /> */}
+
+          {/* ESC Pages */}
+          <Route path="/esc2026" element={<EscList />} />
+          <Route path="/esc2026/all-urls" element={<EscAllUrls/>} />
+          <Route path="/esc2026/:temId" element={<EscProfile />} />
 
           {/* Admin Panel */}
           <Route path="/admin" element={<AdminPanel />} />
