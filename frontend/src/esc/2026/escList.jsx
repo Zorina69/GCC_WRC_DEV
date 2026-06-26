@@ -212,7 +212,7 @@ export default function EscList() {
                   return (
                     <Link
                       key={person.id}
-                      to={`/esc2026/${tempId}`}
+                      to={`/esc/esc2026/${tempId}`}
                       className="result-item"
                     >
                       <img
