@@ -14,12 +14,12 @@ export default function Navbar() {
   const isActive = (path) => location.pathname === path;
 
   const navItems = [
-    // { path: "/", label: t("home") },
-    // { path: "/about", label: t("about") },
-    // { path: "/events", label: t("events") },
-    // { path: "/results", label: t("results") },
-    // { path: "/gallery", label: t("gallery") },
-    // { path: "/contact", label: t("contact") },
+    { path: "/", label: t("home") },
+    { path: "/about", label: t("about") },
+    { path: "/events", label: t("events") },
+    { path: "/results", label: t("results") },
+    { path: "/gallery", label: t("gallery") },
+    { path: "/contact", label: t("contact") },
   ];
 
   return (
@@ -48,6 +48,28 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
+
+          {/* Language Toggle & Mobile Menu Button */}
+          <div className="navbar-right">
+            {/* Language Toggle */}
+            <button
+              className="navbar-lang-toggle"
+              onClick={toggleLanguage}
+              title={language === "en" ? "Switch to Khmer" : "Switch to English"}
+            >
+              {language === "en" ? "ខ្មែរ" : "EN"}
+            </button>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="navbar-toggle"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
