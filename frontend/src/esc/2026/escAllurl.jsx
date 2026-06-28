@@ -18,7 +18,7 @@ export default function AllTempUrls() {
       })
       .catch((err) => {
         console.error(err);
-        setError("មិនអាចទាញទិន្នន័យបានទេ 😔");
+        setError("រកមិនឃើញព័ត៌មានទេ ធ្វើមិចទៅ 😔");
         setLoading(false);
       });
   }, []);

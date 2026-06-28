@@ -16,30 +16,6 @@ const getProfileImage = (id) => {
   return `${CLOUDINARY_BASE}/f_auto,q_auto/ID_${id}`;
 };
 
-// Cache image as base64 in sessionStorage
-const getCachedImage = async (url) => {
-  const cacheKey = `img_cache_${url}`;
-  const cached = sessionStorage.getItem(cacheKey);
-  if (cached) return cached;
-
-  try {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error("Failed");
-    const blob = await res.blob();
-    return new Promise((resolve) => {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        sessionStorage.setItem(cacheKey, reader.result);
-        resolve(reader.result);
-      };
-      reader.readAsDataURL(blob);
-    });
-  } catch {
-    return null;
-  }
-};
-
-
 const InfoField = ({ label, sublabel, value }) => {
   const displayValue = value && value !== "—" ? value : "មិនមានព័ត៌មាន";
   return (
@@ -60,7 +36,6 @@ export default function EscProfile() {
   const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [imgError, setImgError] = useState(false);
   const [imageSrc, setImageSrc] = useState(profileImage);
 
   useEffect(() => {
@@ -114,11 +89,8 @@ export default function EscProfile() {
     // console.log("profile.id:", profile.id); // check exact value
     // console.log("image url:", getProfileImage(profile.id)); // check full URL
 
-    const rawSrc = profile.photo || getProfileImage(profile.id);
-
-    getCachedImage(rawSrc).then((src) => {
-      setImageSrc(src || profileImage);
-    });
+    const src = profile.photo || getProfileImage(profile.id);
+    setImageSrc(src);
   }, [profile]);
 
   if (loading) {
@@ -246,7 +218,9 @@ export default function EscProfile() {
               <img
                 src={imageSrc}
                 alt={profile.name_khmer || profile.name_latin || "Profile"}
-                onError={() => setImgError(true)}
+                loading="eager"
+                decoding="async"
+                onError={() => setImageSrc(profileImage)}
               />
             </div>
           </div>

@@ -39,7 +39,7 @@ export default function EscList() {
       })
       .catch((err) => {
         console.error(err);
-        setError("មិនអាចទាញទិន្នន័យបានទេ 😔");
+        setError("រកមិនឃើញព័ត៌មានទេ ធ្វើមិចទៅ 😔");
         setLoading(false);
       });
   }, []);
@@ -246,7 +246,7 @@ export default function EscList() {
                 })
               ) : (
                 <div className="no-results">
-                  រកមិនឃើញ "{searchTerm}" ទេ 😔
+                  រកមិនឃើញ "{searchTerm}" ទេ ធ្វើមិចទៅ 😔
                 </div>
               )}
             </div>
