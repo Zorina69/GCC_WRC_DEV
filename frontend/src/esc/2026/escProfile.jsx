@@ -8,6 +8,30 @@ const getProfileImage = (id) => {
   return `/esc2026_images/ID ${id}.png`;
 };
 
+// Cache image as base64 in sessionStorage
+const getCachedImage = async (url) => {
+  const cacheKey = `img_cache_${url}`;
+  const cached = sessionStorage.getItem(cacheKey);
+  if (cached) return cached;
+
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error("Failed");
+    const blob = await res.blob();
+    return new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        sessionStorage.setItem(cacheKey, reader.result);
+        resolve(reader.result);
+      };
+      reader.readAsDataURL(blob);
+    });
+  } catch {
+    return null;
+  }
+};
+
+
 const InfoField = ({ label, sublabel, value }) => {
   const displayValue = value && value !== "—" ? value : "មិនមានព័ត៌មាន";
   return (
@@ -75,6 +99,17 @@ export default function EscProfile() {
     fetchProfile();
   }, [tempId]);
 
+  // Load and cache image after profile is fetched
+  useEffect(() => {
+    if (!profile) return;
+
+    const rawSrc = profile.photo || getProfileImage(profile.id);
+
+    getCachedImage(rawSrc).then((src) => {
+      setImageSrc(src || profileImage);
+    });
+  }, [profile]);
+
   if (loading) {
     return (
       <div className="profile-page">
@@ -89,7 +124,7 @@ export default function EscProfile() {
     return (
       <div className="profile-page">
         <div style={{ textAlign: "center", padding: "100px 20px", color: "#e74c3c" }}>
-          <h2>រកមិនឃើញព័ត៌មានទេ 😔</h2>
+          <h2>រកមិនឃើញព័ត៌មានទេ ធ្វើមិចទៅ 😔</h2>
           <p>Temp ID: <strong>{tempId}</strong></p>
           <button
             onClick={() => navigate("/")}
