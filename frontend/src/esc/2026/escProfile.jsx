@@ -3,9 +3,17 @@ import { useParams, useNavigate } from "react-router-dom";
 import profileImage from "../../assets/default-profile.png";
 
 // Match image path: /esc2026/ESC2026-001.png using "id" field
+// const getProfileImage = (id) => {
+//   if (!id) return profileImage;
+//   return `/esc2026_images/ID ${id}.png`;
+// };
+
+const CLOUDINARY_BASE = "https://res.cloudinary.com/dcphqmybu/image/upload";
+
 const getProfileImage = (id) => {
   if (!id) return profileImage;
-  return `/esc2026_images/ID ${id}.png`;
+  // Add auto format + quality optimization for free
+  return `${CLOUDINARY_BASE}/f_auto,q_auto/ID_${id}`;
 };
 
 // Cache image as base64 in sessionStorage
@@ -53,6 +61,7 @@ export default function EscProfile() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [imgError, setImgError] = useState(false);
+  const [imageSrc, setImageSrc] = useState(profileImage);
 
   useEffect(() => {
     if (!tempId) {
@@ -102,6 +111,8 @@ export default function EscProfile() {
   // Load and cache image after profile is fetched
   useEffect(() => {
     if (!profile) return;
+    // console.log("profile.id:", profile.id); // check exact value
+    // console.log("image url:", getProfileImage(profile.id)); // check full URL
 
     const rawSrc = profile.photo || getProfileImage(profile.id);
 
@@ -143,9 +154,9 @@ export default function EscProfile() {
   }
 
   // Image priority: 1) photo field from DB  2) /esc2026/ESC2026-001.png  3) default
-  const imageSrc = imgError
-    ? profileImage
-    : (profile.photo || getProfileImage(profile.id));
+  // const imageSrc = imgError
+  //   ? profileImage
+  //   : (profile.photo || getProfileImage(profile.id));
 
   return (
     <>

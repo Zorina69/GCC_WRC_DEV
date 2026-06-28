@@ -3,9 +3,17 @@ import { Link } from "react-router-dom";
 import profileImage from "../../assets/default-profile.png";
 
 // Match image path: /esc2026/ESC2026-001.png using "id" field
+// const getProfileImage = (id) => {
+//   if (!id) return profileImage;
+//   return `/esc2026_images/ID ${id}.png`;
+// };
+
+const CLOUDINARY_BASE = "https://res.cloudinary.com/dcphqmybu/image/upload";
+
 const getProfileImage = (id) => {
   if (!id) return profileImage;
-  return `/esc2026_images/ID ${id}.png`;
+  // Add auto format + quality optimization for free
+  return `${CLOUDINARY_BASE}/f_auto,q_auto/ID_${id}`;
 };
 
 export default function EscList() {
