@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import escRoute from "./routes/profile.js";
 import participantsRoute from "./routes/participant.js";
+import eventsRoute from "./routes/events.js";
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ app.use(express.json());
 
 app.use("/esc2026", escRoute);
 app.use("/participant", participantsRoute);
+app.use("/events", eventsRoute);
 
 app.get("/", (req, res) => {
   res.send("Backend is running 🚀");

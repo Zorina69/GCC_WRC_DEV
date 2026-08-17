@@ -67,3 +67,29 @@ export async function deleteParticipant(event, index) {
   const json = await res.json();
   if (!json.success) throw new Error(json.error || "Failed to delete");
 }
+
+// ── Get all known event keys
+export async function fetchEvents() {
+  const res = await fetch(`${BASE_URL}/events`);
+  const json = await res.json();
+  if (!json.success) throw new Error(json.error || "Failed to fetch events");
+  return json.events;
+}
+
+// ── Add a new event
+export async function addEvent(event) {
+  const res = await fetch(`${BASE_URL}/events`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ event }),
+  });
+  const json = await res.json();
+  if (!json.success) throw new Error(json.error || "Failed to add event");
+}
+
+// ── Delete an event and all its participants
+export async function deleteEvent(event) {
+  const res = await fetch(`${BASE_URL}/events/${event}`, { method: "DELETE" });
+  const json = await res.json();
+  if (!json.success) throw new Error(json.error || "Failed to delete event");
+}
