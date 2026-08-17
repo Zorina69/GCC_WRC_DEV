@@ -47,30 +47,17 @@ export default function EscProfile() {
 
     const fetchProfile = async () => {
       try {
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/esc2026/`);
-        if (!res.ok) throw new Error("Failed to fetch data");
-
-        const raw = await res.json();
-
-        // Firebase returns an object { "0": {...}, "1": {...} } or an array
-        // Normalize to a flat array either way
-        const allData = Array.isArray(raw)
-          ? raw
-          : Object.values(raw).flatMap((v) =>
-              Array.isArray(v) ? v : Object.values(v)
-            );
-
         // tempId format: "esc-ESC2601" → strip "esc-" prefix to get the id
         const idFromUrl = tempId.startsWith("esc-")
           ? tempId.slice(4)
           : tempId;
 
-        // Match against Firebase "id" field e.g. "ESC2601"
-        const found = allData.find((person) => {
-          return String(person.id || "") === idFromUrl;
-        });
+        const res = await fetch(
+          `${import.meta.env.VITE_API_URL}/esc2026/${idFromUrl}`
+        );
+        if (!res.ok) throw new Error("Profile not found");
 
-        if (!found) throw new Error("Profile not found");
+        const found = await res.json();
         setProfile(found);
       } catch (err) {
         console.error("Error finding profile:", err);
