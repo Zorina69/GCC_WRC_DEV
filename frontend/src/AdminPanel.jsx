@@ -11,7 +11,7 @@ import {
 } from "./lib/apiClient";
 import profileImage from "./assets/default-profile.png";
 
-const ADMIN_PASSWORD = "1234";
+const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD;
 
 const CLOUDINARY_BASE = "https://res.cloudinary.com/dcphqmybu/image/upload";
 const getProfileImage = (id) => {
