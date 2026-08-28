@@ -337,13 +337,15 @@ export default function RoomDivision() {
                       </span>
                       {p.name}
                       <span className="sub">{p.role} · {p.type}</span>
-                      <button
-                        className={`remove-btn ${isAdmin ? "admin-mode" : ""}`}
-                        title="Remove from room"
-                        onClick={() => removePerson(room.id, p.name)}
-                      >
-                        ✕
-                      </button>
+                      {isAdmin && (
+                        <button
+                          className="remove-btn admin-mode"
+                          title="Remove from room"
+                          onClick={() => removePerson(room.id, p.name)}
+                        >
+                          ✕
+                        </button>
+                      )}
                     </div>
                   ))}
                   {Array.from({ length: empty }).map((_, i) => (

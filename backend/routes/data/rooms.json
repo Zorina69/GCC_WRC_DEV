@@ -56,7 +56,14 @@
   },
   {
     "id": 12,
-    "occupants": [],
+    "occupants": [
+      {
+        "name": "សយ ច័ន្ទរតនា",
+        "gender": "Male",
+        "role": "Organizer",
+        "type": "Teacher"
+      }
+    ],
     "capacity": 4
   },
   {
