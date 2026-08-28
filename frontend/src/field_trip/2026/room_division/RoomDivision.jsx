@@ -282,14 +282,14 @@ export default function RoomDivision() {
               className={`admin-btn ${adminPanelOpen ? "active" : ""}`}
               onClick={(e) => { e.stopPropagation(); setAdminPanelOpen((o) => !o); }}
             >
-              {adminPanelOpen ? "🔑 Close Admin" : "🔑 Admin"}
+              {adminPanelOpen ? " Close Admin" : " Admin"}
             </button>
           </div>
 
           {adminPanelOpen && (
             <div className="admin-panel show" ref={panelRef}>
               <button className="close-btn" onClick={() => setAdminPanelOpen(false)}>✕</button>
-              <h3>🔐 Admin Control</h3>
+              <h3> Admin Control</h3>
               <input
                 type="password"
                 placeholder="Enter admin password"
@@ -420,7 +420,7 @@ export default function RoomDivision() {
             </div>
           )}
         </div>
-        <footer>14 rooms · Various capacities · Click ✕ on any occupant to remove (admin only)</footer>
+        <footer>16 rooms · Various capacities · Click ✕ on any occupant to remove (admin only)</footer>
       </div>
     </div>
   );
