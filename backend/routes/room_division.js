@@ -33,7 +33,9 @@ const ROOM_CONFIG = [
   { id: 11, capacity: 4, type: 'Male Teachers', allowedGender: 'Male', allowedType: 'Teacher' },
   { id: 12, capacity: 4, type: 'Male Teachers', allowedGender: 'Male', allowedType: 'Teacher' },
   { id: 13, capacity: 3, type: 'Female Teachers (3 pax)', allowedGender: 'Female', allowedType: 'Teacher' },
-  { id: 14, capacity: 4, type: 'Mixed Female', allowedGender: 'Female', allowedType: 'both' }
+  { id: 14, capacity: 4, type: 'Mixed Female', allowedGender: 'Female', allowedType: 'both' },
+  { id: 15, capacity: 1, type: 'Male Teachers', allowedGender: 'Male', allowedType: 'Teacher' },
+  { id: 16, capacity: 2, type: 'Male Teachers', allowedGender: 'Male', allowedType: 'Teacher' }
 ];
 
 if (!fs.existsSync(DATA_FILE)) {
