@@ -420,7 +420,7 @@ export default function RoomDivision() {
             </div>
           )}
         </div>
-        <footer>16 rooms · Various capacities · Click ✕ on any occupant to remove (admin only)</footer>
+        <footer>16 rooms · Various capacities · Only Admin can remove or change room (admin only)</footer>
       </div>
     </div>
   );
