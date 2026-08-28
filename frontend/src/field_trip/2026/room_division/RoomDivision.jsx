@@ -385,7 +385,8 @@ export default function RoomDivision() {
                 <option value="" disabled>— Choose room —</option>
                 {rooms.map((room) => {
                   const full = room.occupants.length >= room.capacity;
-                  let disabled = full;
+                  const overrideActive = forceOverride && isAdmin;
+                  let disabled = full && !overrideActive;
                   if (selectedPerson && !full) disabled = !isEligible(room.id, selectedPerson);
                   let label = `Room ${String(room.id).padStart(2, "0")} — ${room.occupants.length}/${room.capacity}`;
                   if (full) label += " (Full)";
@@ -402,9 +403,12 @@ export default function RoomDivision() {
                   type="checkbox"
                   id="forceOverride"
                   checked={forceOverride}
+                  disabled={!isAdmin}
                   onChange={(e) => setForceOverride(e.target.checked)}
                 />
-                <label htmlFor="forceOverride">⚠️ Force Override (admin only)</label>
+                <label htmlFor="forceOverride" title={!isAdmin ? "Login as admin to use this" : ""}>
+                  ⚠️ Force Override (admin only)
+                </label>
               </div>
             </div>
           </div>
