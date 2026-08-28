@@ -15,6 +15,7 @@ import EscProfile from "./esc/2026/escProfile";
 import EscPage from "./esc/escPage";
 import Esc2026 from "./esc/2026/esc2026";
 import "./App.css";
+import RoomDivision from "./field_trip/2026/room_division/RoomDivision";
 
 function App() {
   return (
@@ -42,6 +43,9 @@ function App() {
           <Route path="/esc/esc2026" element={<Esc2026 />} />
           <Route path="/esc" element={<EscPage />} />
 
+          {/* GCCFT Pages */}
+          <Route path="/gccft/gccft2026/rooms_division" element={<RoomDivision />} />
+          
           {/* Admin Panel */}
           <Route path="/admin" element={<AdminPanel />} />
 

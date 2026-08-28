@@ -1,10 +1,10 @@
-// backend/server.js
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import escRoute from "./routes/profile.js";
 import participantsRoute from "./routes/participant.js";
 import eventsRoute from "./routes/events.js";
+import roomDivisionRoute from "./routes/room_division.js";
 
 dotenv.config();
 
@@ -16,6 +16,7 @@ app.use(express.json());
 app.use("/esc2026", escRoute);
 app.use("/participant", participantsRoute);
 app.use("/events", eventsRoute);
+app.use("/api/room-division", roomDivisionRoute);
 
 app.get("/", (req, res) => {
   res.send("Backend is running 🚀");

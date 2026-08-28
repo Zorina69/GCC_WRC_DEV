@@ -7,4 +7,12 @@ export default defineConfig({
       include: '**/*.{jsx,js}',  // ← add this line
     }),
   ],
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:4000', // <-- your Express server's actual port
+        changeOrigin: true,
+      },
+    },
+  },
 })
