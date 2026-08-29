@@ -5,6 +5,7 @@ import escRoute from "./routes/profile.js";
 import participantsRoute from "./routes/participant.js";
 import eventsRoute from "./routes/events.js";
 import roomDivisionRoute from "./routes/room_division.js";
+import gccftRoute from "./routes/profile_gcc2026.js";
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.use("/esc2026", escRoute);
 app.use("/participant", participantsRoute);
 app.use("/events", eventsRoute);
 app.use("/api/room-division", roomDivisionRoute);
+app.use("/gccft2026", gccftRoute)
 
 app.get("/", (req, res) => {
   res.send("Backend is running 🚀");

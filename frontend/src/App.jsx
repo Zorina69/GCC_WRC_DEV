@@ -9,6 +9,11 @@ import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import AdminPanel from "./AdminPanel";
 import MainPage from "./ESCmainpage";
+import GccftList from "./field_trip/2026/gccftList";
+import GccftAllUrls from "./field_trip/2026/gccftAllurl";
+import GccftProfile from "./field_trip/2026/gccftProfile";
+import GccftPage from "./field_trip/gccftPage";
+import Gccft2026 from "./field_trip/2026/gccft2026";
 import EscList from "./esc/2026/escList";
 import EscAllUrls from "./esc/2026/escAllurl";
 import EscProfile from "./esc/2026/escProfile";
@@ -45,6 +50,11 @@ function App() {
 
           {/* GCCFT Pages */}
           <Route path="/gccft/gccft2026/rooms_division" element={<RoomDivision />} />
+          <Route path="/gccft/gccft2026/list" element={<GccftList />} />
+          <Route path="/gccft/gccft2026/all-urls" element={<GccftAllUrls/>} />
+          <Route path="/gccft/gccft2026/:tempId" element={<GccftProfile />} />
+          <Route path="/gccft/gccft2026" element={<Gccft2026 />} />
+          <Route path="/gccft" element={<GccftPage />} />
           
           {/* Admin Panel */}
           <Route path="/admin" element={<AdminPanel />} />
