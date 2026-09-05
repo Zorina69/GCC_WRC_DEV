@@ -21,28 +21,28 @@ if (!fs.existsSync(DATA_DIR)) {
 
 const ROOM_CONFIG = [
   // Female Student Rooms
-  { id: 1, capacity: 4, type: 'Female Students', allowedGender: 'Female', allowedType: 'student' },
-  { id: 2, capacity: 4, type: 'Female Students', allowedGender: 'Female', allowedType: 'student' },
-  { id: 3, capacity: 4, type: 'Female Students', allowedGender: 'Female', allowedType: 'student' },
-  { id: 4, capacity: 4, type: 'Female Students', allowedGender: 'Female', allowedType: 'student' },
-  { id: 5, capacity: 5, type: 'Female Students (5 pax)', allowedGender: 'Female', allowedType: 'student' },
+  { id: 208, capacity: 4, type: 'Female Students', allowedGender: 'Female', allowedType: 'student' },
+  { id: 209, capacity: 4, type: 'Female Students', allowedGender: 'Female', allowedType: 'student' },
+  { id: 210, capacity: 4, type: 'Female Students', allowedGender: 'Female', allowedType: 'student' },
+  { id: 304, capacity: 4, type: 'Female Students', allowedGender: 'Female', allowedType: 'student' },
+  { id: 305, capacity: 5, type: 'Female Students (5 pax)', allowedGender: 'Female', allowedType: 'student' },
   
   // Male Student Rooms
-  { id: 6, capacity: 4, type: 'Male Students', allowedGender: 'Male', allowedType: 'student' },
-  { id: 7, capacity: 4, type: 'Male Students', allowedGender: 'Male', allowedType: 'student' },
-  { id: 8, capacity: 4, type: 'Male Students', allowedGender: 'Male', allowedType: 'student' },
-  { id: 9, capacity: 4, type: 'Male Students', allowedGender: 'Male', allowedType: 'student' },
+  { id: 306, capacity: 4, type: 'Male Students', allowedGender: 'Male', allowedType: 'student' },
+  { id: 307, capacity: 4, type: 'Male Students', allowedGender: 'Male', allowedType: 'student' },
+  { id: 308, capacity: 4, type: 'Male Students', allowedGender: 'Male', allowedType: 'student' },
+  { id: 309, capacity: 4, type: 'Male Students', allowedGender: 'Male', allowedType: 'student' },
   
   // Teacher Rooms
-  { id: 10, capacity: 4, type: 'Female Teachers', allowedGender: 'Female', allowedType: 'Teacher' },
-  { id: 11, capacity: 4, type: 'Male Teachers', allowedGender: 'Male', allowedType: 'Teacher' },
-  { id: 12, capacity: 4, type: 'Male Teachers', allowedGender: 'Male', allowedType: 'Teacher' },
-  { id: 13, capacity: 3, type: 'Female Teachers (3 pax)', allowedGender: 'Female', allowedType: 'Teacher' },
+  { id: 107, capacity: 4, type: 'Female Teachers', allowedGender: 'Female', allowedType: 'Teacher' },
+  { id: 109, capacity: 4, type: 'Male Teachers', allowedGender: 'Male', allowedType: 'Teacher' },
+  { id: 207, capacity: 4, type: 'Male Teachers', allowedGender: 'Male', allowedType: 'Teacher' },
+  { id: 106, capacity: 3, type: 'Female Teachers (3 pax)', allowedGender: 'Female', allowedType: 'Teacher' },
   
   // Special Rooms
-  { id: 14, capacity: 4, type: 'Male Mixed', allowedGender: 'Male', allowedType: 'both' },
-  { id: 15, capacity: 1, type: 'Male Teacher (Single)', allowedGender: 'Male', allowedType: 'Teacher' },
-  { id: 16, capacity: 2, type: 'Male Teachers (2 pax)', allowedGender: 'Male', allowedType: 'Teacher' }
+  { id: 310, capacity: 4, type: 'Male Mixed', allowedGender: 'Male', allowedType: 'both' },
+  { id: 301, capacity: 1, type: 'Male Teacher (Single)', allowedGender: 'Male', allowedType: 'Teacher' },
+  { id: 105, capacity: 2, type: 'Male Teachers (2 pax)', allowedGender: 'Male', allowedType: 'Teacher' }
 ];
 
 if (!fs.existsSync(DATA_FILE)) {
